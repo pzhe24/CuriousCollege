@@ -1,0 +1,15 @@
+{{> header user}}
+{{> sideBar}}
+{{#if message}}
+
+<div class="container">
+    <div class="admin-dashboard">
+    <label style="margin-top: 25px">From:</label>
+    <input type="text" name="name" value="{{message.firstname}} {{message.lastname}}" readonly/>
+    <label>Date:</label>
+    <input type="text" name="date" value="{{message.date}}" readonly/>
+    <label>Message:</label>
+    <textarea name="content" rows="15" readonly>{{message.content}}</textarea>
+</div>
+</div>
+{{/if}}

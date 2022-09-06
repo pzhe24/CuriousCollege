@@ -1,0 +1,38 @@
+{{> header user }}
+{{> sideBar}}
+<div class="container">
+  <div c class="admin-dashboard">
+    <div 
+  <div class="row">
+    <div class="col-12">
+      <br>
+      <h2><u>All Users</u></h2>
+      <br>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-12">
+         <table class="table">
+        <thead class="thead-dark">
+          <tr>
+              <th class="col-4" id="user_id_list">User ID</th>
+              <th class="col-4" id="username_list">Username</th>
+              <th class="col-4" id="email_list">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each AllUsers}}        
+          <tr>
+            <td id="user_id">{{this.user_id}}</td>
+            <td id="user_name"><a href="/admin/user/{{this.user_id}}">{{this.username}}</a></td>
+            <td id="email">{{this.email}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+  
+      </div>
+  </div>
+  
+    </div>
+</div>

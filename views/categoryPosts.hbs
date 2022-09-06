@@ -1,0 +1,41 @@
+{{> header user }}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br>
+      <h2><u>{{category}}</u></h2>
+      <br>
+    </div>
+    </div>
+    {{#if user}}
+      <div class="col-lg-1" style="margin: 0px 12px 10px 12px;">
+        <div class="row">
+        <a href="/addThread" class="btn btn-primary">Create Post</a>
+      </div>
+      </div>
+      {{/if}}
+    <div class="row">
+      <div class="col-12">
+        {{#if posts}}
+        <table class="table">
+        <thead class="thead-dark">
+          <tr>
+              <th class="col-6" id="main_titles">Post Title</th>
+              <th class="col-3" id="main_titles">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each posts}}
+          <tr>
+            <td id="main_post_titles"><a href="/viewReply?post_id={{this.post_id}}">{{this.content}}</a></td>
+            <td id="main_titles">{{this.created_on}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{else}}
+        <h3>There are No Posts in this Category</h3>
+      {{/if}}
+      </div>
+    </div>
+</div>

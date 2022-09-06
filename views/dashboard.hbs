@@ -1,0 +1,29 @@
+{{> header user }}
+{{> sideBar }}
+
+
+
+<div class="container">
+<div class="admin-dashboard">
+    
+        <div class="row">
+            <div class="col"></div>
+            <br><br>
+            <h3>Welcome to the Admin Dashboard, <u><i>{{user.username}}</i></u>!</h3>
+        </div>
+
+    <br><br>
+
+
+        <div class="row">
+            <h3><span>Total number of Admins: {{numOfAdmins}}</span></h3>
+            <h3><span>Total number of Accounts: {{numOfUsers}}</span></h3>
+            <h3><span>Total number of Posts: {{numOfPosts}}</span></h3>
+            <h3><span>Total number of Categories: {{numOfCategories}}</span></h3>
+            <br><br><br><br>
+            <h3><span>Total number of Posts created this Week: {{numOfPostsWeek}}</span></h3>
+        </div>
+
+</div>
+
+</div>

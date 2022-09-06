@@ -1,0 +1,63 @@
+{{> header user}}
+{{> sideBar }}
+<div class="container">
+  <div class="admin-dashboard">
+<div class="row">
+    <main class="col-md-12">
+        <br/>
+        {{#if deleteMsg}}
+          <h4>{{deleteMsg}}</h4>
+        {{/if}}
+        <form method="post" action="/admin/user/update">
+        <label>User ID:</label>
+        <input type="text" name="user_id" value="{{userData.user_id}}" readonly/>
+         <label>Username:</label>
+        <input type="text" value="{{userData.username}}" readonly/>
+         <label>Email:</label>
+        <input type="email" value="{{userData.email}}" readonly/>
+        <br/>
+        <h4><u>User Role</u></h4>
+        {{#if isAdmin}}
+        <h5>
+                <input
+                  type="radio"
+                  name="role"
+                  value="0"
+                  checked
+                />Admin
+        </h5>
+         <h5>
+                <input
+                  type="radio"
+                  name="role"
+                  value="1"
+                />Regular User
+        </h5>
+        {{else}}
+        <h5>
+                <input
+                  type="radio"
+                  name="role"
+                  value="0"
+                />Admin
+        </h5>
+        <h5>
+                <input
+                  type="radio"
+                  name="role"
+                  value="1"
+                  checked
+                />Regular User
+        </h5>
+        {{/if}}
+        <a href="/admin/user/delete/{{userData.user_id}}" class="btn btn-danger" style="margin-top:10px; margin-bottom: 15px;">Delete User</a>
+        <input
+        type="submit"
+        value="Update Role"
+        style="margin-top:10px;"
+      />
+    </form>
+    </main>
+</div>
+</div>
+</div>

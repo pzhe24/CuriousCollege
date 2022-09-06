@@ -1,0 +1,39 @@
+{{> header user }}
+{{> sideBar}}
+<div class="container">
+  <div c class="admin-dashboard">
+  <div class="row">
+    <div class="col-12">
+      <br>
+      <h2><u>Messages</u></h2>
+      <br>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {{#if messages}}
+        <table class="table">
+        <thead class="thead-dark">
+          <tr>
+              <th class="col-6" id="main_titles">Content</th>
+              <th class="col-3" id="main_titles">Name</th>
+              <th class="col-3" id="main_titles">Date</th>
+          </tr>
+        </thead>
+        {{#each messages}}
+        <tbody>
+          <tr>
+            <td class="ellipsis" id="user_name"><a href="/admin/message/{{this.message_id}}">{{this.content}}</a></td>
+            <td id="main_titles">{{this.firstname}} {{this.lastname}}</td>
+            <td id="main_titles">{{this.date}}</td>
+          </tr>
+          </tbody>
+          {{/each}}
+      </table>
+          {{else}}
+          <h3 style="text-align:center">No messages</h3>
+          {{/if}}
+      </div>
+    </div>
+    </div>
+</div>

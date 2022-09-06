@@ -1,0 +1,29 @@
+{{> header user }}
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-3 mx-auto">
+    <div class="container">
+        <br><br>
+
+    <form class="form" method="POST" action="/addThread">
+    <label for="category">Choose a category:</label>
+    <select name="category" id="category">
+    <option value="1">Introduce yourself</option>
+    <option value="2">Upcoming school events</option>
+    <option value="3">Former students questions and answers</option>
+    <option value="4">Course recommendation</option>
+    <option value="5">General questions and answers</option>
+    <option value="6">News</option>
+    <option value="7">Mathematics</option>
+    <option value="8">Social science</option>
+     <option value="9">Environment</option>
+    <option value="10">Literature</option>
+    <option value="11">Politics</option>
+    <option value="12">Geography</option>
+    <option value="13">Science</option>
+    <option value="14">History</option>
+    </select>
+        <h5 style="text-align:center">Add question</h5>
+        <textarea id="content" name="content" placeholder="Enter your question" rows="10" style="margin: 20px 0px"></textarea>
+        <input type="submit">
+    </form>
+    </div>
+</div>

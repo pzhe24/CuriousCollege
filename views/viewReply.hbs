@@ -1,0 +1,71 @@
+{{> header user }}
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 mx-auto">
+    <div class="container">
+      <div class="col">
+        <br><br>
+        <div class="row">
+          {{#if posts}}
+          {{#if isAdmin}}
+          {{#each posts}}
+          <div class="card" style="width:95%; margin-left:10px;">
+            <div class="card-body">
+              <h5 class="card-title">{{this.content}}</h5>
+              <a href="/viewReply/delete/{{this.post_id}}" class="btn btn-danger" style="margin-bottom: 15px;">Delete Thread</a>
+            </div>
+          </div>
+          {{/each}}
+          {{else}}
+          {{#each posts}}
+          <div class="card" style="width:95%; margin-left:10px;">
+            <div class="card-body">
+              <h5 class="card-title">{{this.content}}</h5>
+              </div>
+          </div>
+          {{/each}}
+          {{/if}}
+        </div>
+        
+        {{!-- Past answers --}}
+        {{#if replies}}
+        {{#if isAdmin}}
+        <br/><br/>
+        <div class="card" style="padding-top:20px;">
+        <div class="card-body">
+        {{#each replies}}
+        <h5 class="card-title"><i>Response:</i> &ensp;{{this.content}}</h5>
+        <p class="card-text">Posted By: {{this.user_id}}, &ensp; {{this.date}}</p>
+        <a href="/reply/delete/{{this.reply_id}}" class="btn btn-danger" style="margin-bottom: 15px;">Delete Reponse</a>
+        {{/each}}
+        <br/>
+        </div>
+        </div
+        {{else}}
+        <br/><br/>
+        <div class="card" style="padding-top:20px;">
+        <div class="card-body">
+        {{#each replies}}
+        <h5 class="card-title"><i>Response:</i> &ensp;{{this.content}}</h5>
+        <p class="card-text">Posted By: {{this.user_id}}, &ensp; {{this.date}}</p>
+        {{/each}}
+        <br/>
+        </div>
+        </div>
+        {{/if}}
+        {{/if}}
+        <br/><br/>
+        {{#if user}}
+        <form action="/replies/{{post_id}}" method="post">
+        {{!-- Add text for user to answer --}}
+          <textarea id="content" name="content" rows="8" placeholder="Type Answer Here"></textarea>
+          <br/>
+          <div class="row">
+            <input type="submit" value="Answer" class="btn btn-primary" style="width:27%;color:#000000; margin-left:10px"/>
+          </div>
+        </form>
+        {{/if}}
+        {{else}}
+          <h2>There's nothing to show here...</h1>
+        {{/if}}
+      </div>  
+    </div>
+</div>
